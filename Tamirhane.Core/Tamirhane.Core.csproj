@@ -43,6 +43,8 @@
   <ItemGroup>
     <Compile Include="GenericInterface.cs" />
     <Compile Include="GenericTable.cs" />
+    <Compile Include="Models\Appointment.cs" />
+    <Compile Include="Models\Car.cs" />
     <Compile Include="Models\Result.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

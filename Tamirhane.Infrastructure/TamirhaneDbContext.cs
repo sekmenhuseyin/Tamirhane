@@ -9,6 +9,9 @@ namespace Tamirhane.Infrastructure
            : base("name=TamirhaneConnection")
         {
         }
+
         public virtual DbSet<User> User { get; set; }
+        public virtual DbSet<Car> Car { get; set; }
+        public virtual DbSet<Appointment> Appointment { get; set; }
     }
 }
