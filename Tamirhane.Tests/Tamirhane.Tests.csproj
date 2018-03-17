@@ -99,9 +99,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Tamirhane\Tamirhane.csproj">
+    <ProjectReference Include="..\Tamirhane\Tamirhane.MVC.csproj">
       <Project>{5A3BCE0C-989A-4255-9FCD-6033990A7B4A}</Project>
-      <Name>Tamirhane</Name>
+      <Name>Tamirhane.MVC</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
