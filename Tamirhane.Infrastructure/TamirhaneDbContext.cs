@@ -1,13 +1,14 @@
 ﻿using System.Data.Entity;
+using Tamirhane.Core.Models;
 
 namespace Tamirhane.Infrastructure
 {
     public class TamirhaneDbContext : DbContext
     {
         public TamirhaneDbContext()
-           : base("name=ProductAppConnectionString")
+           : base("name=TamirhaneConnection")
         {
         }
-        public DbSet User { get; set; }
+        public virtual DbSet<User> User { get; set; }
     }
 }
