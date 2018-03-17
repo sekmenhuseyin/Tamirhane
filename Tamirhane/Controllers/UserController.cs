@@ -14,13 +14,6 @@ namespace Tamirhane.Controllers
             return View("Index", Db.GetAll());
         }
 
-        // GET: User/Details/5
-        public ActionResult Details(int id)
-        {
-            User user = Db.FindById(id);
-            return View("Details", user);
-        }
-
         // GET: User/Create
         public ActionResult Create()
         {

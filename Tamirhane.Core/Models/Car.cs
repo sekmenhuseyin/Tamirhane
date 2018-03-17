@@ -1,5 +1,4 @@
-﻿using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Tamirhane.Core.Models
 {
@@ -16,12 +15,10 @@ namespace Tamirhane.Core.Models
         /// </summary>
         [Required]
         [MaxLength(15)]
-        [DisplayName("Plaka")]
         public string Plate { get; set; }
 
         [Required]
         [MaxLength(50)]
-        [DisplayName("Marka")]
         public string Company { get; set; }
 
         [Required]
@@ -29,7 +26,6 @@ namespace Tamirhane.Core.Models
         public string Model { get; set; }
 
         [Required]
-        [DisplayName("Yıl")]
         public int Year { get; set; }
     }
 }

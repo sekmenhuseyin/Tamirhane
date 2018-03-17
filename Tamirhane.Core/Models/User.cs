@@ -1,5 +1,4 @@
-﻿using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Tamirhane.Core.Models
 {
@@ -7,12 +6,10 @@ namespace Tamirhane.Core.Models
     {
         [Required]
         [MaxLength(100)]
-        [DisplayName("Ad")]
         public string FirstName { get; set; }
 
         [Required]
         [MaxLength(100)]
-        [DisplayName("Soyad")]
         public string LastName { get; set; }
 
         [Required]
