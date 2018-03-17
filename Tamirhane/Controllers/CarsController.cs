@@ -54,8 +54,6 @@ namespace Tamirhane.Controllers
         }
 
         // POST: Cars/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult Delete(int id)
         {
             Db.Remove(id);
