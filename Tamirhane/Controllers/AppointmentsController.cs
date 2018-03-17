@@ -7,6 +7,7 @@ namespace Tamirhane.Controllers
     public class AppointmentsController : Controller
     {
         private AppointmentRepository Db = new AppointmentRepository();
+        private CarRepository CarDb = new CarRepository();
 
         // GET: Appointments
         public ActionResult Index()
@@ -17,21 +18,19 @@ namespace Tamirhane.Controllers
         // GET: Appointments/Create
         public ActionResult Create()
         {
+            ViewBag.Car_Id = new SelectList(CarDb.GetAll(), "Id", "Plate");
             return View("Create");
         }
 
         // POST: Appointments/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,DateTime")] Appointment appointment)
+        public ActionResult Create([Bind(Include = "Id,DateTime")] Appointment appointment, int Car_Id)
         {
-            if (ModelState.IsValid)
-            {
-                var result = Db.Add(appointment);
-                if (result.Status == true)
-                    return RedirectToAction("Index");
-            }
-
+            appointment.Car = CarDb.FindById(Car_Id);
+            var result = Db.Add(appointment);
+            if (result.Status == true)
+                return RedirectToAction("Index");
             return View("Create", appointment);
         }
 
@@ -47,12 +46,9 @@ namespace Tamirhane.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,DateTime")] Appointment appointment)
         {
-            if (ModelState.IsValid)
-            {
-                var result = Db.Edit(appointment);
-                if (result.Status == true)
-                    return RedirectToAction("Index");
-            }
+            var result = Db.Edit(appointment);
+            if (result.Status == true)
+                return RedirectToAction("Index");
             return View("Edit", appointment);
         }
 

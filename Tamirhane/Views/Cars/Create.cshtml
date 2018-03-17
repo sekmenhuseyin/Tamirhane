@@ -16,6 +16,7 @@
         <h4>Car</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
         <div class="form-group">
             @Html.LabelFor(model => model.User, "User", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-4">
@@ -23,6 +24,7 @@
                 @Html.ValidationMessageFor(model => model.User, "", new { @class = "text-danger" })
             </div>
         </div>
+
         <div class="form-group">
             @Html.LabelFor(model => model.Plate, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
