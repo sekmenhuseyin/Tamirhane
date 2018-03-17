@@ -32,9 +32,15 @@ namespace Tamirhane.Infrastructure.Repository
         /// </summary>
         public Result Edit(Car p)
         {
+            var tmp = FindById(p.Id);
+            tmp.Plate = p.Plate;
+            tmp.Company = p.Company;
+            tmp.Model = p.Model;
+            tmp.Year = p.Year;
+            tmp.DateModified = DateTime.Now;
             try
             {
-                Db.Entry(p).State = System.Data.Entity.EntityState.Modified;
+                Db.SaveChanges();
                 return new Result(true, p.Id);
             }
             catch (Exception ex)

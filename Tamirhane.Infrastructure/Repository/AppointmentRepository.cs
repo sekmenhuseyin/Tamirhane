@@ -32,9 +32,12 @@ namespace Tamirhane.Infrastructure.Repository
         /// </summary>
         public Result Edit(Appointment p)
         {
+            var tmp = FindById(p.Id);
+            tmp.DateTime = p.DateTime;
+            tmp.DateModified = DateTime.Now;
             try
             {
-                Db.Entry(p).State = System.Data.Entity.EntityState.Modified;
+                Db.SaveChanges();
                 return new Result(true, p.Id);
             }
             catch (Exception ex)

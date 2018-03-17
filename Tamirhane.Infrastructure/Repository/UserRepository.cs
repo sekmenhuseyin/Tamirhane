@@ -32,9 +32,15 @@ namespace Tamirhane.Infrastructure.Repository
         /// </summary>
         public Result Edit(User p)
         {
+            var tmp = FindById(p.Id);
+            tmp.FirstName = p.FirstName;
+            tmp.LastName = p.LastName;
+            tmp.Email = p.Email;
+            tmp.Tel = p.Tel;
+            tmp.DateModified = DateTime.Now;
             try
             {
-                Db.Entry(p).State = System.Data.Entity.EntityState.Modified;
+                Db.SaveChanges();
                 return new Result(true, p.Id);
             }
             catch (Exception ex)
