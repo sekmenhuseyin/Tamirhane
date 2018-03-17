@@ -4,7 +4,7 @@ using Tamirhane.Infrastructure.Repository;
 
 namespace Tamirhane.Controllers
 {
-    public class UserController : Controller
+    public class UsersController : Controller
     {
         private UserRepository Db = new UserRepository();
 
